@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { ScrollView, Text, TextInput, TouchableOpacity, View, Alert } from 'react-native';
-import Styles, { DarkStyle, LightStyle } from './styles/Styles.js';
+import { DarkStyle, LightStyle, colors } from './styles/Styles.js';
 import NumericInput from "react-native-numeric-input";
 import { RadioButton, Switch } from 'react-native-paper';
 
@@ -41,13 +41,13 @@ export default function App() {
     let resultText, resultColor;
     if (alcoholConsentration <= 0.0) {
       resultText = 'You are safe to drive. Your blood alcohol concentration is 0.0‰.';
-      resultColor = 'green';
+      resultColor = colors.color1;
     } else if (alcoholConsentration <= 0.5 || alcoholConsentration <= 0.22) {
       resultText = 'You may be impaired. Your blood alcohol concentration is ' + alcoholConsentration.toFixed(2) + '‰.';
-      resultColor = '#FFD700';
+      resultColor = colors.color2;
     } else {
       resultText = 'Do not drive! Your blood alcohol concentration is ' + alcoholConsentration.toFixed(2) + '‰.';
-      resultColor = 'red';
+      resultColor = colors.color3;
     }
     setResultText(resultText);
     setResultColor(resultColor);
@@ -56,10 +56,10 @@ export default function App() {
   return (
     <ScrollView contentContainerStyle={currentStyle.container}>
       <View style={currentStyle.columnContainer}>
-      <Switch style={currentStyle.switch} value={isDarkStyle} color='green'
+        <Switch style={currentStyle.switch} value={isDarkStyle}
           onValueChange={newValue => setIsDarkStyle(newValue)}
-          thumbColor={isDarkStyle ? '#0fa817' : 'red'}
-          trackColor={{ false: 'grey', true: 'yellow' }}
+          thumbColor={isDarkStyle ? colors.color1 : colors.color1}
+          trackColor={{ false: colors.color5, true: colors.color6 }}
         />
         <Text style={currentStyle.info}>{info}</Text>
       </View>
@@ -67,22 +67,23 @@ export default function App() {
       <RadioButton.Group
         onValueChange={newValue => setRadioval(newValue)}
         value={radioval}
+        color={colors.color6}
       >
         <View style={currentStyle.radioStyle}>
           <RadioButton
-            labelStyle={currentStyle.radioButton}
             value='male'
-            color='green'
+            color={colors.color1}
+            uncheckedColor={colors.color7}
           />
           <Text style={currentStyle.radioText}>Male</Text>
           <View style={currentStyle.radioStyle}>
             <RadioButton
-              labelStyle={currentStyle.radioButton}
               value='female'
-              color='green'
+              color={colors.color1}
+              uncheckedColor={colors.color7}
             />
+            <Text style={currentStyle.radioText}>Female</Text>
           </View>
-          <Text style={currentStyle.radioText}>Female</Text>
         </View>
       </RadioButton.Group>
       <Text style={currentStyle.label}>Weight</Text>
@@ -91,7 +92,7 @@ export default function App() {
           style={currentStyle.textInput}
           keyboardType="decimal-pad"
           onChangeText={(text) => setWeight(text)}
-          placeholder="   (kg)"
+          placeholder="weight(kg)"
         />
       </View>
       <Text style={currentStyle.label}>Bottles</Text>
@@ -99,6 +100,8 @@ export default function App() {
         <NumericInput
           inputStyle={currentStyle.numericInput}
           onChange={(value) => setBottles(value)}
+          borderColor={colors.color1}
+          rounded
           minValue={0} // Prevent input of negative values.
         />
       </View>
@@ -107,6 +110,8 @@ export default function App() {
         <NumericInput
           inputStyle={currentStyle.numericInput}
           onChange={(value) => setTime(value)}
+          borderColor={colors.color1}
+          rounded
           minValue={0} // Prevent input of negative values.
         />
       </View>

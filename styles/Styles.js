@@ -1,12 +1,23 @@
 import { StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
 
+
+const colors = {
+  color1: '#03aa1c',
+  color2: '#ffff04',
+  color3: '#ff0303',
+  color4: '#eeeded',
+  color5: '#5e5d5d',
+  color6: '#ffffff',
+  color7: '#040000'
+};
+
 const LightStyle = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: Constants.statusBarHeight + 5,
-    backgroundColor: '#f6f4f4',
-    borderWidth: 1,
+    backgroundColor: colors.color4,
+    borderWidth: 2,
     borderRadius: 10,
     margin: 10,
     padding: 10,
@@ -25,34 +36,38 @@ const LightStyle = StyleSheet.create({
     fontSize: 12,
   },
   header: {
-    fontSize: 30,
-    color: 'black',
+    fontSize: 35,
+    color: colors.color7,
     fontWeight: 'bold',
     paddingBottom: 10,
     textAlign: 'center',
   },
   label: {
-    color: 'black',
+    color: colors.color7,
     fontWeight: 'bold',
-    fontSize: 18,
+    fontSize: 24,
     paddingLeft: 10,
     textAlign: 'center',
+
   },
   textInputContainer: {
     justifyContent: 'center',
     alignItems: 'center',
   },
   textInput: {
-    width: 80,
+    width: 120,
     fontSize: 18,
     paddingLeft: 10,
-    borderWidth: 1,
-    borderRadius: 5,
+    borderWidth: 2,
+    borderRadius: 10,
+    borderColor: colors.color1,
     padding: 10,
     margin: 10,
     marginTop: 5,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor:colors.color6,
+    textAlign: 'center',
   },
   submitContainer: {
     alignItems: 'center',
@@ -61,8 +76,8 @@ const LightStyle = StyleSheet.create({
     width: 180,
     borderWidth: 1,
     borderRadius: 10,
-    color: 'white',
-    backgroundColor: 'green',
+    color: colors.color6,
+    backgroundColor: colors.color1,
     padding: 15,
     margin: 10,
     textAlign: 'center',
@@ -72,17 +87,18 @@ const LightStyle = StyleSheet.create({
   numericInputContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center', 
   },
   buttonStyle: {
-    borderColor: 'green',
+    borderColor: colors.color1,
     borderRadius: 10,
   },
   numericInput: {
     paddingLeft: 10,
     borderWidth: 5,
-    borderColor: 'green',
-    borderRadius: 5,
+    borderColor: colors.color1,
+    backgroundColor:colors.color6,
+    
   },
   radioStyle: {
     flexDirection: 'row',
@@ -91,11 +107,14 @@ const LightStyle = StyleSheet.create({
   },
   radioText: {
     fontWeight: 'bold',
-    fontSize: 18,
+    fontSize: 24,
   },
   resultText: {
     fontSize: 24,
     textAlign: 'center',
+    backgroundColor:colors.color6,
+    bottom:10,
+    borderRadius: 10,
   },
 });
 
@@ -103,8 +122,8 @@ const DarkStyle = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: Constants.statusBarHeight + 5,
-    backgroundColor: 'grey',
-    borderWidth: 1,
+    backgroundColor: colors.color5,
+    borderWidth: 2,
     borderRadius: 10,
     margin: 10,
     padding: 10,
@@ -121,18 +140,19 @@ const DarkStyle = StyleSheet.create({
   },
   info: {
     fontSize: 12,
+    color: colors.color6,
   },
   header: {
-    fontSize: 30,
-    color: 'black',
+    fontSize: 35,
+    color: colors.color6,
     fontWeight: 'bold',
     paddingBottom: 10,
     textAlign: 'center',
   },
   label: {
-    color: 'black',
+    color: colors.color6,
     fontWeight: 'bold',
-    fontSize: 18,
+    fontSize: 24,
     paddingLeft: 10,
     textAlign: 'center',
   },
@@ -141,16 +161,19 @@ const DarkStyle = StyleSheet.create({
     alignItems: 'center',
   },
   textInput: {
-    width: 80,
+    width: 120,
     fontSize: 18,
     paddingLeft: 10,
-    borderWidth: 1,
-    borderRadius: 5,
+    borderWidth: 3,
+    borderRadius: 10,
+    borderColor: colors.color1,
     padding: 10,
     margin: 10,
     marginTop: 5,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor:colors.color6,
+    textAlign: 'center',
   },
   submitContainer: {
     alignItems: 'center',
@@ -160,7 +183,7 @@ const DarkStyle = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     color: 'white',
-    backgroundColor: 'green',
+    backgroundColor: colors.color1,
     padding: 15,
     margin: 10,
     textAlign: 'center',
@@ -170,17 +193,18 @@ const DarkStyle = StyleSheet.create({
   numericInputContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center', 
   },
   buttonStyle: {
-    borderColor: 'green',
+    borderColor: colors.color1,
     borderRadius: 10,
   },
   numericInput: {
     paddingLeft: 10,
     borderWidth: 5,
-    borderColor: 'green',
-    borderRadius: 5,
+    borderColor: colors.color1,
+    backgroundColor:colors.color6,
+    
   },
   radioStyle: {
     flexDirection: 'row',
@@ -188,13 +212,17 @@ const DarkStyle = StyleSheet.create({
     justifyContent: 'center',
   },
   radioText: {
+    color: colors.color6,
     fontWeight: 'bold',
-    fontSize: 18,
+    fontSize: 24,
+  
   },
   resultText: {
     fontSize: 24,
     textAlign: 'center',
+    backgroundColor:colors.color6,
+    borderRadius: 10,
   },
 });
 
-export { LightStyle, DarkStyle };
+export { LightStyle, DarkStyle, colors};

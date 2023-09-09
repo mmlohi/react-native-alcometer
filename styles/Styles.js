@@ -1,7 +1,6 @@
 import { StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
 
-
 const colors = {
   color1: '#03aa1c',
   color2: '#ffff04',
@@ -9,7 +8,10 @@ const colors = {
   color4: '#eeeded',
   color5: '#5e5d5d',
   color6: '#ffffff',
-  color7: '#040000'
+  color7: '#040000',
+  color8: 'rgba(124, 109, 109, 0.2)',
+  color9: 'rgba(0, 0, 0, 0.2)',
+
 };
 
 const LightStyle = StyleSheet.create({
@@ -17,7 +19,7 @@ const LightStyle = StyleSheet.create({
     flex: 1,
     marginTop: Constants.statusBarHeight + 5,
     backgroundColor: colors.color4,
-    borderWidth: 2,
+    borderWidth: 1,
     borderRadius: 10,
     margin: 10,
     padding: 10,
@@ -48,7 +50,6 @@ const LightStyle = StyleSheet.create({
     fontSize: 24,
     paddingLeft: 10,
     textAlign: 'center',
-
   },
   textInputContainer: {
     justifyContent: 'center',
@@ -58,7 +59,7 @@ const LightStyle = StyleSheet.create({
     width: 120,
     fontSize: 18,
     paddingLeft: 10,
-    borderWidth: 2,
+    borderWidth: 1.1,
     borderRadius: 10,
     borderColor: colors.color1,
     padding: 10,
@@ -66,7 +67,7 @@ const LightStyle = StyleSheet.create({
     marginTop: 5,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor:colors.color6,
+    backgroundColor: colors.color6,
     textAlign: 'center',
   },
   submitContainer: {
@@ -87,18 +88,16 @@ const LightStyle = StyleSheet.create({
   numericInputContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center', 
-  },
-  buttonStyle: {
-    borderColor: colors.color1,
-    borderRadius: 10,
+    alignItems: 'center',
   },
   numericInput: {
     paddingLeft: 10,
     borderWidth: 5,
     borderColor: colors.color1,
-    backgroundColor:colors.color6,
-    
+    backgroundColor: colors.color6,
+    justifyContent: 'center',
+    alignItems: 'center',
+
   },
   radioStyle: {
     flexDirection: 'row',
@@ -112,9 +111,13 @@ const LightStyle = StyleSheet.create({
   resultText: {
     fontSize: 24,
     textAlign: 'center',
-    backgroundColor:colors.color6,
-    bottom:10,
+    backgroundColor: colors.color6,
+    bottom: 10,
     borderRadius: 10,
+    padding: 10,
+    backgroundColor: colors.color8,
+    borderWidth: 1,
+    borderColor: colors.color5,
   },
 });
 
@@ -164,7 +167,7 @@ const DarkStyle = StyleSheet.create({
     width: 120,
     fontSize: 18,
     paddingLeft: 10,
-    borderWidth: 3,
+    borderWidth: 2,
     borderRadius: 10,
     borderColor: colors.color1,
     padding: 10,
@@ -172,7 +175,7 @@ const DarkStyle = StyleSheet.create({
     marginTop: 5,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor:colors.color6,
+    backgroundColor: colors.color6,
     textAlign: 'center',
   },
   submitContainer: {
@@ -193,18 +196,15 @@ const DarkStyle = StyleSheet.create({
   numericInputContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center', 
-  },
-  buttonStyle: {
-    borderColor: colors.color1,
-    borderRadius: 10,
+    alignItems: 'center',
   },
   numericInput: {
     paddingLeft: 10,
     borderWidth: 5,
     borderColor: colors.color1,
-    backgroundColor:colors.color6,
-    
+    backgroundColor: colors.color6,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   radioStyle: {
     flexDirection: 'row',
@@ -215,14 +215,17 @@ const DarkStyle = StyleSheet.create({
     color: colors.color6,
     fontWeight: 'bold',
     fontSize: 24,
-  
+
   },
   resultText: {
     fontSize: 24,
     textAlign: 'center',
-    backgroundColor:colors.color6,
+    backgroundColor: colors.color6,
     borderRadius: 10,
+    padding: 10,
+    backgroundColor: colors.color9,
+    borderWidth: 1,
   },
 });
 
-export { LightStyle, DarkStyle, colors};
+export { LightStyle, DarkStyle, colors };

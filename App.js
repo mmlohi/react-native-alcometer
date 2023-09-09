@@ -102,6 +102,7 @@ export default function App() {
           onChange={(value) => setBottles(value)}
           borderColor={colors.color1}
           rounded
+          border
           minValue={0} // Prevent input of negative values.
         />
       </View>
@@ -120,7 +121,9 @@ export default function App() {
           <Text style={currentStyle.submit}>CALCULATE</Text>
         </View>
       </TouchableOpacity>
-      <Text style={[currentStyle.resultText, { color: resultColor }]}>{resultText}</Text>
+      <Text style={[currentStyle.resultText, { color: isDarkStyle ? colors.color4 : colors.color9 }]}>
+        {resultText ? resultText : 'Your result comes here...'}
+      </Text>
     </ScrollView>
   );
 }

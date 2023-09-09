@@ -11,7 +11,7 @@ export default function App() {
   const [bottles, setBottles] = useState(0);
   const [time, setTime] = useState(0);
   const [resultText, setResultText] = useState('');
-  const [resultColor, setResultColor] = useState('black');
+  const [resultColor, setResultColor] = useState(colors.color8);
   const [radioval, setRadioval] = useState("male");
   const [isDarkStyle, setIsDarkStyle] = useState(false);
   const info = isDarkStyle ? "Switch to Light Theme" : "Switch to Dark Theme";
@@ -102,7 +102,6 @@ export default function App() {
           onChange={(value) => setBottles(value)}
           borderColor={colors.color1}
           rounded
-          border
           minValue={0} // Prevent input of negative values.
         />
       </View>
@@ -121,9 +120,13 @@ export default function App() {
           <Text style={currentStyle.submit}>CALCULATE</Text>
         </View>
       </TouchableOpacity>
-      <Text style={[currentStyle.resultText, { color: isDarkStyle ? colors.color4 : colors.color9 }]}>
-        {resultText ? resultText : 'Your result comes here...'}
+      <Text style={[currentStyle.resultText, {
+        color: resultText ? resultColor :
+          isDarkStyle ? colors.darkPlaceholderColor : colors.lightPlaceholderColor
+      }]}>
+        {resultText ? resultText : 'Yours result comes here...'}
       </Text>
+
     </ScrollView>
   );
 }

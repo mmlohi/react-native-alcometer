@@ -4,13 +4,13 @@ import Constants from 'expo-constants';
 const colors = {
   color1: '#03aa1c',
   color2: '#ffff04',
-  color3: '#ff0303',
-  color4: '#eeeded',
-  color5: '#5e5d5d',
+  color3: '#ff0303',   
   color6: '#ffffff',
   color7: '#040000',
   color8: 'rgba(124, 109, 109, 0.2)',
   color9: 'rgba(0, 0, 0, 0.2)',
+  darkPlaceholderColor: '#cccccc', 
+  lightPlaceholderColor: '#888888', 
 
 };
 
@@ -91,13 +91,9 @@ const LightStyle = StyleSheet.create({
     alignItems: 'center',
   },
   numericInput: {
-    paddingLeft: 10,
     borderWidth: 5,
     borderColor: colors.color1,
     backgroundColor: colors.color6,
-    justifyContent: 'center',
-    alignItems: 'center',
-
   },
   radioStyle: {
     flexDirection: 'row',
@@ -107,6 +103,8 @@ const LightStyle = StyleSheet.create({
   radioText: {
     fontWeight: 'bold',
     fontSize: 24,
+    paddingRight: 10,
+    paddingLeft:5,
   },
   resultText: {
     fontSize: 24,
@@ -199,12 +197,9 @@ const DarkStyle = StyleSheet.create({
     alignItems: 'center',
   },
   numericInput: {
-    paddingLeft: 10,
     borderWidth: 5,
     borderColor: colors.color1,
     backgroundColor: colors.color6,
-    justifyContent: 'center',
-    alignItems: 'center'
   },
   radioStyle: {
     flexDirection: 'row',
@@ -215,6 +210,8 @@ const DarkStyle = StyleSheet.create({
     color: colors.color6,
     fontWeight: 'bold',
     fontSize: 24,
+    paddingRight: 10,
+    paddingLeft:5,
 
   },
   resultText: {

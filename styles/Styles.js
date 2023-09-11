@@ -4,7 +4,9 @@ import Constants from 'expo-constants';
 const colors = {
   color1: '#03aa1c',
   color2: '#ffff04',
-  color3: '#ff0303',   
+  color3: '#ff0303',
+  color4: '#eeeded',
+  color5: '#5e5d5d',   
   color6: '#ffffff',
   color7: '#040000',
   color8: 'rgba(124, 109, 109, 0.2)',

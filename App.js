@@ -126,7 +126,6 @@ export default function App() {
       }]}>
         {resultText ? resultText : 'Yours result comes here...'}
       </Text>
-
     </ScrollView>
   );
 }

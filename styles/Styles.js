@@ -6,13 +6,13 @@ const colors = {
   color2: '#ffff04',
   color3: '#ff0303',
   color4: '#eeeded',
-  color5: '#5e5d5d',   
+  color5: '#5e5d5d',
   color6: '#ffffff',
   color7: '#040000',
   color8: 'rgba(124, 109, 109, 0.2)',
   color9: 'rgba(0, 0, 0, 0.2)',
-  darkPlaceholderColor: '#cccccc', 
-  lightPlaceholderColor: '#888888', 
+  darkPlaceholderColor: '#cccccc',
+  lightPlaceholderColor: '#888888',
 
 };
 
@@ -104,7 +104,7 @@ const LightStyle = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 24,
     paddingRight: 10,
-    paddingLeft:5,
+    paddingLeft: 5,
   },
   resultText: {
     fontSize: 24,
@@ -112,7 +112,7 @@ const LightStyle = StyleSheet.create({
     backgroundColor: colors.color8,
     bottom: 10,
     borderRadius: 10,
-    padding: 10,  
+    padding: 10,
     borderWidth: 1,
     borderColor: colors.color7,
   },
@@ -120,22 +120,22 @@ const LightStyle = StyleSheet.create({
 
 const DarkStyle = StyleSheet.create({
   container: {
-  ...LightStyle.container,
-    backgroundColor: colors.color5,     
+    ...LightStyle.container,
+    backgroundColor: colors.color5,
   },
   columnContainer: {
-  ...LightStyle.columnContainer,
+    ...LightStyle.columnContainer,
   },
   switch: {
     ...LightStyle.switch
   },
   info: {
-   ...LightStyle.info,
+    ...LightStyle.info,
     color: colors.color6,
   },
   header: {
     ...LightStyle.header,
-    color: colors.color6,   
+    color: colors.color6,
   },
   label: {
     ...LightStyle.label,
@@ -145,32 +145,32 @@ const DarkStyle = StyleSheet.create({
     ...LightStyle.textInputContainer,
   },
   textInput: {
-  ...LightStyle.textInput,
+    ...LightStyle.textInput,
     borderColor: colors.color1,
     backgroundColor: colors.color6,
     borderWidth: 1.1,
     borderColor: colors.color1,
   },
   submitContainer: {
-   ...LightStyle.submitContainer,
+    ...LightStyle.submitContainer,
   },
   submit: {
-   ...LightStyle.submit,
+    ...LightStyle.submit,
     backgroundColor: colors.color1,
   },
   numericInputContainer: {
-   ...LightStyle.numericInputContainer,
+    ...LightStyle.numericInputContainer,
   },
   numericInput: {
-   ...LightStyle.numericInput,
+    ...LightStyle.numericInput,
     borderColor: colors.color1,
     backgroundColor: colors.color6,
   },
   radioStyle: {
-...LightStyle.radioStyle,
+    ...LightStyle.radioStyle,
   },
   radioText: {
-...LightStyle.radioText,
+    ...LightStyle.radioText,
   },
   resultText: {
     ...LightStyle.resultText,

@@ -9,11 +9,15 @@ const colors = {
   color5: '#5e5d5d',
   color6: '#ffffff',
   color7: '#040000',
-  color8: 'rgba(124, 109, 109, 0.2)',
+  color8: 'rgba(90, 79, 79, 0.4)',
   color9: 'rgba(0, 0, 0, 0.2)',
   darkPlaceholderColor: '#cccccc',
   lightPlaceholderColor: '#888888',
 
+};
+
+const BaseStyle= {
+fontFamily:'Montserrat'
 };
 
 const LightStyle = StyleSheet.create({
@@ -37,20 +41,21 @@ const LightStyle = StyleSheet.create({
     alignItems: 'center',
   },
   info: {
+    ...BaseStyle,
     fontSize: 12,
+  
   },
   header: {
+    ...BaseStyle,
     fontSize: 35,
     color: colors.color7,
-    fontWeight: 'bold',
     paddingBottom: 10,
     textAlign: 'center',
   },
   label: {
+   ...BaseStyle,
     color: colors.color7,
-    fontWeight: 'bold',
-    fontSize: 24,
-    paddingLeft: 10,
+    fontSize: 22,
     textAlign: 'center',
   },
   textInputContainer: {
@@ -58,13 +63,13 @@ const LightStyle = StyleSheet.create({
     alignItems: 'center',
   },
   textInput: {
+    ...BaseStyle,
     width: 120,
     fontSize: 18,
     borderWidth: 1.1,
     borderRadius: 10,
     borderColor: colors.color1,
     padding: 10,
-    margin: 10,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: colors.color6,
@@ -74,6 +79,7 @@ const LightStyle = StyleSheet.create({
     alignItems: 'center',
   },
   submit: {
+    ...BaseStyle,
     width: 180,
     borderWidth: 1,
     borderRadius: 10,
@@ -83,7 +89,6 @@ const LightStyle = StyleSheet.create({
     margin: 10,
     textAlign: 'center',
     fontSize: 22,
-    fontWeight: 'bold',
   },
   numericInputContainer: {
     flexDirection: 'row',
@@ -100,14 +105,16 @@ const LightStyle = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  
   radioText: {
-    fontWeight: 'bold',
-    fontSize: 24,
-    paddingRight: 10,
-    paddingLeft: 5,
+...BaseStyle,
+    fontSize: 22,
+    padding: 13,
+  
   },
   resultText: {
-    fontSize: 24,
+   ...BaseStyle,
+    fontSize: 22,
     textAlign: 'center',
     backgroundColor: colors.color8,
     bottom: 10,
@@ -149,7 +156,6 @@ const DarkStyle = StyleSheet.create({
     borderColor: colors.color1,
     backgroundColor: colors.color6,
     borderWidth: 1.1,
-    borderColor: colors.color1,
   },
   submitContainer: {
     ...LightStyle.submitContainer,
@@ -160,6 +166,7 @@ const DarkStyle = StyleSheet.create({
   },
   numericInputContainer: {
     ...LightStyle.numericInputContainer,
+
   },
   numericInput: {
     ...LightStyle.numericInput,
@@ -168,13 +175,16 @@ const DarkStyle = StyleSheet.create({
   },
   radioStyle: {
     ...LightStyle.radioStyle,
+    color: colors.color6,
+    uncheckedColor: colors.color7,
+
   },
   radioText: {
     ...LightStyle.radioText,
+    color: colors.color6,
   },
   resultText: {
     ...LightStyle.resultText,
-    backgroundColor: colors.color6,
     backgroundColor: colors.color9,
   },
 });

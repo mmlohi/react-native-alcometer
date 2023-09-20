@@ -4,8 +4,10 @@ import { ScrollView, Text, TextInput, TouchableOpacity, View, Alert } from 'reac
 import { DarkStyle, LightStyle, colors } from './styles/Styles.js';
 import NumericInput from "react-native-numeric-input";
 import { RadioButton, Switch } from 'react-native-paper';
+import { useFonts } from 'expo-font';
 
 export default function App() {
+
   // State variables
   const [weight, setWeight] = useState("");
   const [bottles, setBottles] = useState(0);
@@ -17,6 +19,15 @@ export default function App() {
   const info = isDarkStyle ? "Switch to Light Theme" : "Switch to Dark Theme";
   const currentStyle = isDarkStyle ? DarkStyle : LightStyle;
 
+
+  const [loaded] = useFonts({
+    Montserrat: require('./assets/fonts/MontserratAlternates-Medium.ttf'),
+
+  });
+
+  if (!loaded) {
+    return null;
+  }
   const calculateAlcoholConsentration = () => {
     if (!weight) {
       // Display a warning alert if weight is not entered
@@ -53,6 +64,8 @@ export default function App() {
     setResultColor(resultColor);
   };
 
+
+
   return (
     <ScrollView contentContainerStyle={currentStyle.container}>
       <View style={currentStyle.columnContainer}>
@@ -73,14 +86,14 @@ export default function App() {
           <RadioButton
             value='male'
             color={colors.color1}
-            uncheckedColor={colors.color7}
+            uncheckedColor={isDarkStyle ? colors.color6 : colors.color7}
           />
           <Text style={currentStyle.radioText}>Male</Text>
           <View style={currentStyle.radioStyle}>
             <RadioButton
               value='female'
               color={colors.color1}
-              uncheckedColor={colors.color7}
+              uncheckedColor={isDarkStyle ? colors.color6 : colors.color7}
             />
             <Text style={currentStyle.radioText}>Female</Text>
           </View>
